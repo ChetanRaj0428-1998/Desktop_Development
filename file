@@ -1,0 +1,73 @@
+>Instal Java JDK 8
+$java -version
+
+openjdk version "1.8.0_252"
+OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09)
+OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
+
+>Run command
+$ sudo apt update
+$ sudo apt install openjdk-8-jdk openjdk-8-jre
+
+>Run command to find jvm path in system
+$ whereis jvm
+
+>Install Android Studio and Gradle. Make sure to configure and install sdk and place gradle folder in Android Folder 
+
+-https://gradle.org/install/
+-https://linuxize.com/post/how-to-install-android-studio-on-ubuntu-18-04/
+
+> Then install SDK in home folder
+$ sudo apt-get install android-sdk
+-https://stackoverflow.com/questions/34556884/how-to-install-android-sdk-on-ubuntu 
+
+1. $ sudo gedit ~/.bashrc
+Then place the below lines at the end
+#Android
+export ANDROID_HOME=/home/chetan/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+#Java
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+
+#Gradle	
+export GRADLE_HOME=/home/chetan/android-studio/gradle-6.5.1
+export PATH=$PATH:$GRADLE_HOME/bin
+
+then close editor and enter command
+
+$ source ~/.bashrc
+
+2. $ sudo su
+>enter password
+
+	$ gedit /etc/environment
+Then place the below lines
+
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+export JAVA_HOME
+
+ANDROID_HOME="/home/chetan/Android/Sdk/build-tools/30.0.0"
+
+export GRADLE_HOME=/home/chetan/android-studio/gradle-6.5.1
+
+
+then close editor and enter command
+
+	$. /etc/environment
+
+then enter these commands
+$ export PATH=$PATH:$JAVA_HOME/bin
+$ export PATH=$PATH:$GRADLE_HOME/bin
+$ export PATH=$PATH:$ANDROID_HOME
+
+then check using $ echo $PATH OR $JAVA_HOME $GRADLE_HOME $ANDROID_HOME
+
+
+
+For Liscensing SDK run command in Android Studio Folder
+$ yes | ~/Android/Sdk/tools/bin/sdkmanager --licenses
+
+
