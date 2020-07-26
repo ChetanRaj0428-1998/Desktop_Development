@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
